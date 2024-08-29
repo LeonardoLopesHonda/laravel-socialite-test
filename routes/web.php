@@ -2,15 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('home');
+})->name('view.home');
 
-// Route::get('/auth/redirect', function() {
-//     return Socialite::driver('github')->redirect();
-// });
+Route::get('/auth/github/redirect', [LoginController::class, 'githubRedirect'])->name('githubRedirect');
 
-// Route::get('/auth/callback', function() {
-//     $user = Socialite::driver('github')->user();
-// });
+Route::get('/auth/github/callback', [LoginController::class, 'githubCallback'])->name('githubCallback');
