@@ -9,7 +9,6 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="../css/output.css">
 
         <!-- Styles -->
         <style>
@@ -53,6 +52,14 @@
             .register:hover {
                 color: blueviolet;
             }
+
+            input {
+                color: black;
+            }
+
+            .btn-submit {
+                color: white;
+            }
         </style>
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
@@ -94,8 +101,22 @@
                         @endif
                     </header>
                     <main class="mt-6 text-center d-flex">
-                        <button class="btn-github">Login Github</button>
-                        <a href="{{route('user.form')}}" class="register">Not registered yet?</a>
+                        <form action="{{route('user.create')}}" method="POST">
+                            @csrf
+                            <div>
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name">
+                            </div>
+                            <div>
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email">
+                            </div>
+                            <div>
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password">
+                            </div>
+                            <input class="btn-submit" type="submit" value="Send">
+                        </form>
                     </main>
                     <footer class="py-16 text-center text-sm text-black dark:text-white/70">
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
