@@ -94,7 +94,7 @@
                         @endif
                     </header>
                     <main class="mt-6 text-center d-flex">
-                        <button class="btn-github">Login Github</button>
+                        <a href="{{route('githubRedirect')}}" class="btn-github">Login Github</a>
                         <a href="{{route('user.form')}}" class="register">Not registered yet?</a>
                     </main>
                     <footer class="py-16 text-center text-sm text-black dark:text-white/70">
