@@ -37,6 +37,26 @@
                 color: black; */
             }
 
+            .btn-google {
+                padding: 2rem;
+                padding-left: 3rem;
+                padding-right: 3rem; 
+                background: red;
+                border: 1px solid white;
+                border-radius: 15px;
+                color: black;
+
+                transition: all 750ms ease;
+            }
+
+            .btn-google:hover {
+                cursor: pointer;
+                filter: invert(1);
+                /* background: white;
+                border: 1px solid black;
+                color: black; */
+            }
+
             .d-flex {
                 display: flex;
                 flex-direction: column;
@@ -95,6 +115,7 @@
                     </header>
                     <main class="mt-6 text-center d-flex">
                         <a href="{{route('githubRedirect')}}" class="btn-github">Login Github</a>
+                        <a href="{{route('googleRedirect')}}" class="btn-google">Login Google</a>
                         <a href="{{route('user.form')}}" class="register">Not registered yet?</a>
                     </main>
                     <footer class="py-16 text-center text-sm text-black dark:text-white/70">

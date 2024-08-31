@@ -10,8 +10,7 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
 use Auth;
 
-class LoginController extends Controller
-{
+class LoginController extends Controller {
     public function githubRedirect() {
         return Socialite::driver('github')->redirect();
     }
@@ -20,6 +19,18 @@ class LoginController extends Controller
         $user = Socialite::driver('github')->user();
         
         $this->createOrUpdateUser($user, 'github');
+
+        return redirect()->route('view.heropage');
+    }
+
+    public function googleRedirect() {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function googleCallback() {
+        $user = Socialite::driver('google')->user();
+        
+        $this->createOrUpdateUser($user, 'google');
 
         return redirect()->route('view.heropage');
     }

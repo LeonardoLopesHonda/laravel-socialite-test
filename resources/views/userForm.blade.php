@@ -101,6 +101,7 @@
                         @endif
                     </header>
                     <main class="mt-6 text-center d-flex">
+                        <a href="{{ route('logout') }}" class="btn-github">Go back</a>
                         <form action="{{route('user.create')}}" method="POST">
                             @csrf
                             <div>
